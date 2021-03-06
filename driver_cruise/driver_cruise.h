@@ -14,12 +14,13 @@
 #define __USER_ITF
 
 /* CyberCruise User Interface */
-typedef void (*tfudGetParam)(float midline[200][2], float yaw, float yawrate, float speed, float acc, float width, int gearbox, float rpm);
+typedef void(*tfudGetParam)
+    (float midline[200][2], float yaw, float yawrate, float speed, float acc, float width, int gearbox, float rpm);
 typedef void (*tfudSetParam)(float *cmdAcc, float *cmdBrake, float *cmdSteer, int *cmdGear);
 
 typedef struct {
-    tfudGetParam userDriverGetParam;
-    tfudSetParam userDriverSetParam;
+  tfudGetParam userDriverGetParam;
+  tfudSetParam userDriverSetParam;
 } tUserItf;
 
 #endif
